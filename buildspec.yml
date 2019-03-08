@@ -1,0 +1,12 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo foo
+      - export BUCKET=brich-lambda
+      - aws cloudformation package --template-file dotnet_template.yaml --s3-bucket $BUCKET --output-template-file dotnet_outputtemplate.yaml
+artifacts:
+  type: zip
+  files:
+    - dotnet_template.yaml
+    - dotnet_outputtemplate.yaml
