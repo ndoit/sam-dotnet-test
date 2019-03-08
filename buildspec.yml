@@ -4,9 +4,9 @@ phases:
     commands:
       - echo "foo"
       - export BUCKET=brich-lambda
-      - aws cloudformation package --template-file dotnet-template.yaml --s3-bucket $BUCKET --output-template-file dotnet-outputtemplate.yaml
+      - aws cloudformation package --template-file template.yaml --s3-bucket $BUCKET --output-template-file dotnet-outputtemplate.yaml
 artifacts:
   type: zip
   files:
-    - dotnet-template.yaml
+    - template.yaml
     - dotnet-outputtemplate.yaml
